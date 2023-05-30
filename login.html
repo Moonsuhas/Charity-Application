@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Charity Foundation - Login/Register</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #login-form, #register-form {
+      width: 300px;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    input[type="email"],
+    input[type="password"],
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="login-form">
+      <h2>Login</h2>
+      <form id="login-form">
+        <input type="email" id="login-email" placeholder="Email" required>
+        <input type="password" id="login-password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+      <a href="#" id="forgot-password">Forgot Password?</a>
+    </div>
+    <div id="register-form">
+      <h2>Register</h2>
+      <form id="register-form">
+        <input type="text" id="register-name" placeholder="Name" required>
+        <input type="email" id="register-email" placeholder="Email" required>
+        <input type="password" id="register-password" placeholder="Password" required>
+        <button type="submit">Register</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("login-form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent form submission
+      
+      // Get input values
+      var email = document.getElementById("login-email").value;
+      var password = document.getElementById("login-password").value;
+
+      // Perform login validation
+      // Replace this with your actual login logic
+      if (email === "example@example.com" && password === "password") {
+        alert("Login successful");
+        // Redirect the user to the about section after successful login
+        // Replace "about.html" with the actual page URL
+        window.location.href = "about.html";
+      } else {
+        alert("Invalid email or password");
+      }
+    });
+
+    document.getElementById("register-form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent form submission
+      
+      // Get input values
+      var name = document.getElementById("register-name").value;
+      var email = document.getElementById("register-email").value;
+      var password = document.getElementById("register-password").value;
+
+      // Perform registration logic
+      // Replace this with your actual registration logic
+      // You can use AJAX to send the form data to a server-side script
+      alert("Registration successful");
+      document.getElementById("register-form").reset();
+
+      // Redirect the user to the about section after successful registration
+      // Replace "about.html" with the actual page URL
+      window.location.href = "about.html";
+    });
+
+    document.getElementById("forgot-password").addEventListener("click", function(event) {
+      event.preventDefault(); // Prevent default link behavior
+      
+      // Add your forgot password logic here
+      alert("Forgot Password clicked");
+    });
+
+    // Show the login form initially
+    document.getElementById("login-form").style.display = "block";
+    document.getElementById("register-form").style.display = "block";
+  </script>
+</body>
+</html>
